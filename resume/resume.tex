@@ -1,0 +1,101 @@
+% resume.tex (clean, single-file, pdfLaTeX-friendly)
+\documentclass[10pt]{article}
+
+\usepackage[margin=0.7in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{titlesec}
+
+\definecolor{Accent}{HTML}{1F4E79}
+
+\setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=2pt}
+\titleformat{\section}{\large\bfseries\color{Accent}}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+\newcommand{\name}[1]{\begin{center}\LARGE\bfseries #1\end{center}}
+\newcommand{\contact}[1]{\begin{center}\small #1\end{center}}
+\newcommand{\sep}{\ \textbar\ }
+
+\begin{document}
+\pagestyle{empty}
+
+% ===== Header =====
+\name{Kaihong Deng}
+\begin{center}\normalsize \textbf{Quantitative Developer \& Researcher}\end{center}
+\contact{
+Guangzhou, China (UTC+8)\sep
+\href{mailto:kh.deng@foxmail.com}{kh.deng@foxmail.com}\sep
+\href{https://doi.org/10.48550/arXiv.2512.22476}{arXiv:2512.22476}
+}
+
+% ===== Summary =====
+\section*{Summary}
+\begin{itemize}
+  \item Seeking \textbf{Quant/Backtesting Engineer Intern (Remote)}; building an auditable backtesting + auto-tuning workflow for crypto perpetual futures.
+  \item Focus: strict execution semantics (t$\rightarrow$t+1), realistic trading costs (fees/slippage/funding), walk-forward evaluation, reproducible artifacts.
+  \item Delivery: can implement scoped modules (indicator/cost model/slippage model/validator/report) with tests and reproducible commands.
+  \item Availability: Full-time (40+ hrs/week), start immediately (UTC+8).
+\end{itemize}
+
+% ===== Highlights =====
+\section*{Highlights}
+\begin{itemize}
+  \item Strict backtesting with auditability: deterministic runs (seed), environment self-check signatures binding code+cost profile, and machine-readable artifacts.
+  \item Realistic cost model per bar: fees + slippage + funding; multiple versioned cost profiles (e.g., conservative/high-leverage) for replay and sensitivity.
+  \item WFE (walk-forward evaluation): rolling windows, consolidated ranking outputs (CSV/Excel), and robustness gates to reduce overfitting risk.
+  \item Scalable experimentation: multi-process batch evaluation and Bayesian-style search (e.g., TPE) for efficient parameter tuning.
+  \item Market/data \& validation integration: Binance Futures historical data; Gate.io perpetual testnet connectivity and live-style monitoring/report artifacts (no mainnet funds).
+\end{itemize}
+
+% ===== Skills =====
+\section*{Skills}
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\textbf{Languages} & Python (3.10+), English (Technical reading/writing), SQL (basic), PowerShell (basic) \\
+\textbf{Backtesting} & strict t$\rightarrow$t+1 semantics, cost modeling, WFE/robustness gates, metrics/reporting \\
+\textbf{Optimization} & Optuna (TPE), Bayesian search, grid/random baselines \\
+\textbf{Data} & pandas, NumPy, CSV/Parquet, time-series alignment, reproducibility controls \\
+\textbf{Quality} & Git, pytest, type hints, ruff, pre-commit/CI gates, artifact/version traceability \\
+\end{tabularx}
+
+% ===== Projects =====
+\section*{Selected Project}
+
+\textbf{AutoQuant (Private) --- Crypto Perpetual Futures Backtesting \& Auto-Tuning System} \hfill \textit{2025--2026} \\
+\textit{Python; strict execution engine + realistic costs + WFE + audit gates + Optuna}
+\begin{itemize}
+  \item Implemented a strict execution engine enforcing t$\rightarrow$t+1 semantics to reduce look-ahead bias; supports multi-timeframe signal pipelines.
+  \item Integrated real-world cost modeling (fee, slippage, funding) and produced a cost breakdown for audits and sensitivity checks.
+  \item Added walk-forward evaluation (sliding windows) and robustness gates to reduce \textit{best-of-N} overfitting risk.
+  \item Automated parameter search with Optuna (TPE) and generated structured reports (Excel/CSV) for candidate ranking and validation.
+  \item Designed reproducibility controls: self-check signatures bind code + cost profile; CI gates catch semantic drift (schema + no-lookahead tests).
+  \item Built testnet-oriented validation and monitoring/report artifacts to evaluate execution constraints beyond pure backtests.
+\end{itemize}
+
+% ===== Experience =====
+\section*{Experience}
+\textbf{Independent Research Engineer (Quant)} \hfill \textit{Remote} \\
+\textit{End-to-end ownership (design $\rightarrow$ implementation $\rightarrow$ verification $\rightarrow$ audit)}
+\begin{itemize}
+  \item Built and iterated a research workflow that prioritizes correctness and reproducibility before scaling experiments.
+  \item Maintained an append-only decision log and traceable artifacts for each experiment run.
+\end{itemize}
+
+% ===== Education =====
+\section*{Education}
+\textbf{Guangzhou College of Commerce (GCC)} \hfill \textit{2023--2027 (expected)} \\
+B.S. Candidate in Artificial Intelligence
+
+% ===== Work Samples =====
+\section*{Work Samples}
+\begin{itemize}
+  \item Preprint: \href{https://doi.org/10.48550/arXiv.2512.22476}{AutoQuant: An Auditable Expert-System Framework for Execution-Constrained Auto-Tuning in Cryptocurrency Perpetual Futures} (arXiv:2512.22476).
+  \item Additional technical documentation and sample reports can be provided upon request.
+\end{itemize}
+
+\end{document}
