@@ -1,10 +1,11 @@
 # AutoQuant: Crypto Perpetual Futures Infrastructure
 
 ![Status](https://img.shields.io/badge/Status-Private_Implementation-critical)
-![Research](https://img.shields.io/badge/Research-KDD%20%2F%20KBS-blue)
+![Research](https://img.shields.io/badge/Research-ESWA%20%2F%20KBS-blue)
 ![License](https://img.shields.io/badge/Copyright-All_Rights_Reserved-red)
 
-> **⚠️ ACCESS NOTICE:** > **Core implementation is PRIVATE.** This repository is a **documentation-only portfolio** demonstrating engineering standards and architectural principles. It does **NOT** contain runnable strategies, backtesting engines, or proprietary alpha factors.
+> **⚠️ ACCESS NOTICE:**
+> **Core implementation is PRIVATE.** This repository is a **documentation-only portfolio** demonstrating engineering standards and architectural principles. It does **NOT** contain runnable strategies, backtesting engines, or proprietary alpha factors.
 
 ---
 
@@ -13,14 +14,25 @@
 This repository serves as the **conceptual and engineering framework** for the project **"AlphaGuardian"**, submitted to the **WEEX AI Wars Hackathon**.
 
 * **Submission Focus**: **Auditable AI Strategy & Risk Governance**.
-* **Key Innovation**: Implementing the **STRICT T+1 Protocol** (from my ESWA/KDD research) to eliminate look-ahead bias in high-frequency crypto trading.
-* **Live Demo**: Please refer to the video submission/demo link provided in the DoraHacks platform.
+* **Key Innovation**: Implementing the **STRICT T+1 Protocol** (derived from my **ESWA** research) to eliminate look-ahead bias in crypto perpetual futures evaluation.
+* **Audit Artifacts**: [Link to Demo Video or Sample Report PDF] *(See DoraHacks submission page)*
+* **Live Demo**: See the DoraHacks submission video/demo link.
+
+### ✅ What Judges Can Verify (10 minutes)
+* **No-lookahead audit** (explicit t→t+1 execution semantics)
+* **OOS evaluation** + small-grid sensitivity
+* **Risk rails** (leverage ≤ 20x, drawdown guard + cooldown, minimum trades ≥ 10, symbol whitelist)
+* **Cost model** (fee/slippage/funding) + stress test (cost multipliers)
+* **Reproducibility** (seed, config hash, fixed output path)
 
 ---
 
 ## 🔗 Key Resources
 
-* **📄 Research Preprint (arXiv)**: [https://doi.org/10.48550/arXiv.2512.22476](https://doi.org/10.48550/arXiv.2512.22476)
+* **📄 Research Preprint (ESWA)**: [https://doi.org/10.48550/arXiv.2512.22476](https://doi.org/10.48550/arXiv.2512.22476)
+  * *Status: Preprint available (Submitted to Expert Systems with Applications).*
+* **⚖️ Governance Logic (KBS)**: *Private / Under Review (Submitted to Knowledge-Based Systems)*
+  * *See "Engineering Capabilities" below for the implemented logic.*
 * **👨‍💻 Resume (CV)**: [`resume/CV.pdf`](resume/CV.pdf)
 * **📧 Contact**: [kh.deng@foxmail.com](mailto:kh.deng@foxmail.com)
 
@@ -30,15 +42,14 @@ This repository serves as the **conceptual and engineering framework** for the p
 
 Derived from academic research and industrial practice, focusing on **Auditability** and **Robustness**:
 
-* **Strict T+1 Semantics**:
+* **Strict T+1 Semantics (Source: ESWA Preprint)**:
     * Rigid separation of `Generation (t)` and `Execution (t+1)` to enforce no-lookahead constraints.
     * Semantic validators to reject any signal leaking future information.
-* **High-Fidelity Cost Simulation**:
-    * Accounting for **Tiered Fees**, **Dynamic Slippage** (Volatility-aware), and **Funding Rates**.
-    * "Cost Stress Tests" to verify strategy viability under extreme market conditions.
-* **Knowledge-Driven Governance**:
+* **Knowledge-Driven Governance (Source: KBS Submission)**:
     * **Live Guard**: Real-time monitoring of "Semantic Drift" between backtest and live execution.
     * **Autonomous Kill-Switch**: Pre-defined logic to halt trading when statistical properties deviate from the baseline.
+* **High-Fidelity Cost Simulation**:
+    * Accounting for **Tiered Fees**, **Dynamic Slippage** (Volatility-aware), and **Funding Rates**.
 
 ---
 
@@ -63,7 +74,7 @@ Derived from academic research and industrial practice, focusing on **Auditabili
 
 ## ⚖️ Verification & IP
 
-* **Non-Executable**: This portfolio is intentionally designed as a static showcase. For technical details on the underlying algorithms, please refer to the linked **Research Preprint**.
+* **Non-Executable**: This portfolio is intentionally designed as a static showcase. For public technical details, please refer to the linked **ESWA Preprint**.
 * **Private Demo**: Private implementation walk-throughs or additional verification evidence can be provided upon request for potential employers or collaborators.
 
 **Copyright (c) 2026 Kaihong Deng. All rights reserved.**
