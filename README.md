@@ -1,52 +1,69 @@
-# AutoQuant
+# AutoQuant: Crypto Perpetual Futures Infrastructure
 
-Public portfolio for **AutoQuant** (crypto perpetual futures research infrastructure).
+![Status](https://img.shields.io/badge/Status-Private_Implementation-critical)
+![Research](https://img.shields.io/badge/Research-KDD%20%2F%20KBS-blue)
+![License](https://img.shields.io/badge/Copyright-All_Rights_Reserved-red)
 
-- **Core implementation is private** and intentionally not included (no runnable strategy/backtest engine).
-- This repo only contains high-level, non-actionable information to demonstrate engineering capability (**no code that can reproduce the system**).
+> **⚠️ ACCESS NOTICE:** > **Core implementation is PRIVATE.** This repository is a **documentation-only portfolio** demonstrating engineering standards and architectural principles. It does **NOT** contain runnable strategies, backtesting engines, or proprietary alpha factors.
 
-## Links
+---
 
-- Preprint (arXiv): https://doi.org/10.48550/arXiv.2512.22476
-- Resume (LaTeX): `resume/resume.tex`
-- Resume (PDF): `resume/CV.pdf`
-- Contact: kh.deng@foxmail.com
+## 🏆 WEEX AI Wars Entry: AlphaGuardian
 
-## What This Repository Is (and Is Not)
+This repository serves as the **conceptual and engineering framework** for the project **"AlphaGuardian"**, submitted to the **WEEX AI Wars Hackathon**.
 
-- Is: a documentation-only portfolio that explains engineering principles and deliverable standards.
-- Is not: a runnable trading system, a backtesting engine, strategy source code, parameter search pipeline, or reproducible research workflow.
+* **Submission Focus**: **Auditable AI Strategy & Risk Governance**.
+* **Key Innovation**: Implementing the **STRICT T+1 Protocol** (from my ESWA/KDD research) to eliminate look-ahead bias in high-frequency crypto trading.
+* **Live Demo**: Please refer to the video submission/demo link provided in the DoraHacks platform.
 
-## Portfolio Contents
+---
 
-- `README.md`: capabilities, deliverables, and engagement standard
-- `resume/`: CV sources and PDF
-- `NOTICE.md`: IP and disclosure notice
+## 🔗 Key Resources
 
-## Engineering Capabilities (High Level)
+* **📄 Research Preprint (arXiv)**: [https://doi.org/10.48550/arXiv.2512.22476](https://doi.org/10.48550/arXiv.2512.22476)
+* **👨‍💻 Resume (CV)**: [`resume/CV.pdf`](resume/CV.pdf)
+* **📧 Contact**: [kh.deng@foxmail.com](mailto:kh.deng@foxmail.com)
 
-- No-lookahead backtesting semantics (t→t+1 style execution constraints)
-- Execution-cost modeling (fees/slippage/funding) as part of evaluation
-- Robust evaluation (e.g., walk-forward style validation) and auditability mindset
+---
 
-## Typical Paid Deliverables (Scoped Modules)
+## 🛠 Engineering Capabilities (High-Level)
 
-- Slippage model upgrade (spread/volatility/volume-aware) with unit tests and calibration notes
-- Cost accounting breakdown (fees/slippage/funding) for audits and sensitivity checks
-- Robust evaluation tooling (walk-forward style validation, ranking exports)
-- Data/semantic validators (alignment, no-lookahead checks) and acceptance reports
+Derived from academic research and industrial practice, focusing on **Auditability** and **Robustness**:
 
-## Engagement / Acceptance Standard
+* **Strict T+1 Semantics**:
+    * Rigid separation of `Generation (t)` and `Execution (t+1)` to enforce no-lookahead constraints.
+    * Semantic validators to reject any signal leaking future information.
+* **High-Fidelity Cost Simulation**:
+    * Accounting for **Tiered Fees**, **Dynamic Slippage** (Volatility-aware), and **Funding Rates**.
+    * "Cost Stress Tests" to verify strategy viability under extreme market conditions.
+* **Knowledge-Driven Governance**:
+    * **Live Guard**: Real-time monitoring of "Semantic Drift" between backtest and live execution.
+    * **Autonomous Kill-Switch**: Pre-defined logic to halt trading when statistical properties deviate from the baseline.
 
-- Clear scope + acceptance criteria before implementation
-- Reproducible verification instructions and test evidence (as applicable)
-- Minimal, rollback-friendly changes
+---
 
-## Verification
+## 📦 Delivered Modules & Scopes
 
-- This portfolio is intentionally non-executable. For public technical details, please refer to the preprint.
-- Private implementation walk-throughs or additional evidence can be provided on request.
+*While the core engine is private, the following modules represent my standard for deliverable engineering:*
 
-## Intellectual Property
+1.  **Slippage Model Upgrade**: Spread/Volume-aware models with unit tests and calibration reports.
+2.  **Audit Accounting System**: Granular breakdown of PnL (Fees vs. Slippage vs. Funding) for sensitivity analysis.
+3.  **Robust Evaluation Tooling**: Walk-forward validation pipelines and ranking export utilities.
+4.  **Semantic Validators**: Automated checks for data alignment and signal integrity.
 
-Copyright (c) 2026 Kaihong Deng. All rights reserved.
+---
+
+## ✅ Engagement & Acceptance Standard
+
+* **Defined Scope**: Clear acceptance criteria established before implementation.
+* **Verifiable Evidence**: Reproducible verification instructions and test reports accompanying all deliverables.
+* **Rollback-Friendly**: Minimal invasive changes with atomic commits.
+
+---
+
+## ⚖️ Verification & IP
+
+* **Non-Executable**: This portfolio is intentionally designed as a static showcase. For technical details on the underlying algorithms, please refer to the linked **Research Preprint**.
+* **Private Demo**: Private implementation walk-throughs or additional verification evidence can be provided upon request for potential employers or collaborators.
+
+**Copyright (c) 2026 Kaihong Deng. All rights reserved.**
